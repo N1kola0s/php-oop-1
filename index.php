@@ -19,7 +19,7 @@ class Movie {
     public $vote_average;
     public $description;
 
-    //imposto una funzione per attribuire dei valori all'interno della lista di instanze dichiarate
+    //imposto un costruttore per attribuire i valori all'interno della lista di variabili d'instanza dichiarate
     function __construct(String $poster, String $title, String $language, float $vote_average, String $description)
     {
         $this -> poster = $poster;
@@ -80,7 +80,7 @@ array_push($films, $batman, $spiderman, $superman);
 
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
