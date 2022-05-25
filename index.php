@@ -26,12 +26,12 @@ class Movie {
         $this -> description = $description;
     }
 
-    function getVote(){
+    /* function getVote(){
         return $this->vote_average;
-    }
+    } */
     function setVoteRounding($vote_average){
 
-        $this -> vote_average = round($vote_average, 0, PHP_ROUND_HALF_UP ) / 2 ;
+        $this -> vote_average = round($vote_average, 0, PHP_ROUND_HALF_UP );
     }
 
 }
@@ -99,7 +99,7 @@ array_push($films, $batman, $spiderman, $superman);
                         <!-- /.card-img-top -->
 
                         <div class="card-body">
-                            <h5 class="card-title text-center">
+                            <h5 class="card-title text-center text-uppercase pb-4">
                                 <?php echo $film->title; ?>
                             </h5>
                             <!-- /.card-title -->
