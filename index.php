@@ -31,7 +31,7 @@ class Movie {
     }
     function setVoteRounding($vote_average){
 
-        $this -> vote_average = round($vote_average, 0, PHP_ROUND_HALF_UP );
+        $this -> vote_average = round($vote_average, 0, PHP_ROUND_HALF_UP ) / 2 ;
     }
 
 }
@@ -76,6 +76,8 @@ array_push($films, $batman, $spiderman, $superman);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>php-oop-1</title>
+
+    <link rel="stylesheet" href="style.css">
      <!-- Bootstrap CSS v5.0.2 -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -85,18 +87,18 @@ array_push($films, $batman, $spiderman, $superman);
 
     <h1 class="text-center"> MOVIES</h1>
 
-        <div class="row row-cols-3">
+        <div class="row row-cols-3 py-5">
 
             <?php foreach ($films as $film) :?>
 
                 <div class="col">
-                    <div class="card">
+                    <div class="card border-0">
                         <div class="card-img-top">
-                            <img class="img-fluid" src="<?php echo $film->poster; ?>" alt="image <?php echo $film->title; ?>">
+                            <img src="<?php echo $film->poster; ?>" alt="image <?php echo $film->title; ?>">
                         </div>
                         <!-- /.card-img-top -->
 
-                        <div class="card-body ">
+                        <div class="card-body">
                             <h5 class="card-title text-center">
                                 <?php echo $film->title; ?>
                             </h5>
