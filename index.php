@@ -17,7 +17,7 @@ class Movie {
     public $vote_average;
     public $description;
 
-    function __construct(String $poster, String $title, String $language, Int $vote_average, String $description)
+    function __construct(String $poster, String $title, String $language, float $vote_average, String $description)
     {
         $this -> poster = $poster;
         $this -> title = $title;
@@ -26,9 +26,27 @@ class Movie {
         $this -> description = $description;
     }
 
+    function getVote(){
+        return $this->vote_average;
+    }
+    function setVoteRounding($vote_average){
+
+        $this -> vote_average = round($vote_average, 0, PHP_ROUND_HALF_UP );
+    }
+
 }
 
+$batman = new Movie('https://image.tmdb.org/t/p/w342/8o1R5QU797hcLuvU4M9F3rOBGEY.jpg', 'TheBatman', 'en', 7.8, 'Quando un killer prende di mira l’élite di Gotham con una serie di malvagi stratagemmi, una scia di indizi criptici spinge il più grande detective del mondo a indagare nei bassifondi, incontrando personaggi come Selina Kyle alias Catwoman, Oswald Cobblepot alias il Pinguino, Carmine Falcone e Edward Nashton alias l’Enigmista. Mentre le prove iniziano a condurlo più vicino alla soluzione e la portata dei piani del malfattore diventa chiara, Batman deve stringere nuove alleanze, smascherare il colpevole e rendere giustizia all’abuso di potere e alla corruzione che da tempo affliggono Gotham City.');
+$batman -> setVoteRounding(7.8);
+var_dump($batman);
+
+$spiderman = new Movie ('https://image.tmdb.org/t/p/w342/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg', 'Spiderman', 'en', 7.2, 'Peter Parker è il tipico adolescente sfigato, segretamente innamorato fin da bambino della sua vicina di casa Mary Jane, rimasto orfano dei genitori e che vive con gli zii. Durante una gita scolastica a un laboratorio scientifico Peter viene morso da un ragno geneticamente modificato. Ben presto si renderà conto di non aver più bisogno degli occhiali da vista e di essere in possesso di poteri molto particolari.');
+$spiderman -> setVoteRounding(7.2);
+
+
 $films = [
+    $batman,
+    $spiderman,
     new Movie('https://image.tmdb.org/t/p/w342/8o1R5QU797hcLuvU4M9F3rOBGEY.jpg', 'TheBatman', 'en', 7.8, 'Quando un killer prende di mira l’élite di Gotham con una serie di malvagi stratagemmi, una scia di indizi criptici spinge il più grande detective del mondo a indagare nei bassifondi, incontrando personaggi come Selina Kyle alias Catwoman, Oswald Cobblepot alias il Pinguino, Carmine Falcone e Edward Nashton alias l’Enigmista. Mentre le prove iniziano a condurlo più vicino alla soluzione e la portata dei piani del malfattore diventa chiara, Batman deve stringere nuove alleanze, smascherare il colpevole e rendere giustizia all’abuso di potere e alla corruzione che da tempo affliggono Gotham City.'),
 
     new Movie ('https://image.tmdb.org/t/p/w342/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg', 'Spiderman', 'en', 7.2, 'Peter Parker è il tipico adolescente sfigato, segretamente innamorato fin da bambino della sua vicina di casa Mary Jane, rimasto orfano dei genitori e che vive con gli zii. Durante una gita scolastica a un laboratorio scientifico Peter viene morso da un ragno geneticamente modificato. Ben presto si renderà conto di non aver più bisogno degli occhiali da vista e di essere in possesso di poteri molto particolari.'),
