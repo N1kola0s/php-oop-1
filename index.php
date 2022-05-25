@@ -108,7 +108,7 @@ array_push($films, $batman, $spiderman, $superman);
 
                     <div class="card border-0">
                         <div class="card-img-top">
-                            <img src="<?php echo $film->poster; ?>" alt="image <?php echo $film->title; ?>">
+                            <img class="h-100" src="<?php echo $film->poster; ?>" alt="image <?php echo $film->title; ?>">
                         </div>
                         <!-- /.card-img-top -->
 
