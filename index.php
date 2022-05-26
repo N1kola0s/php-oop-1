@@ -12,14 +12,14 @@
 // creo una classe Movie
 class Movie {
 
-    //dichiaro le istanze all'interno della classe
+    //dichiaro le variabili/attributi all'interno della classe
     public $poster;
     public $title;
     public $language;
     public $vote_average;
     public $description;
 
-    //imposto un costruttore per attribuire i valori all'interno della lista di variabili d'instanza dichiarate
+    //imposto un costruttore per attribuire i valori all'interno della lista di variabili dichiarate nella classe
     function __construct(String $poster, String $title, String $language, float $vote_average, String $description)
     {
         $this -> poster = $poster;
@@ -44,7 +44,7 @@ class Movie {
 //imposto un array vuoto
 $films = [];
 
-//inizializzo i valori delle singole istanze
+//genero gli oggetti della classe
 
 $batman = new Movie('https://image.tmdb.org/t/p/w342/8o1R5QU797hcLuvU4M9F3rOBGEY.jpg', 'TheBatman', 'en', 7.8, 'Quando un killer prende di mira l’élite di Gotham con una serie di malvagi stratagemmi, una scia di indizi criptici spinge il più grande detective del mondo a indagare nei bassifondi, incontrando personaggi come Selina Kyle alias Catwoman, Oswald Cobblepot alias il Pinguino, Carmine Falcone e Edward Nashton alias l’Enigmista. Mentre le prove iniziano a condurlo più vicino alla soluzione e la portata dei piani del malfattore diventa chiara, Batman deve stringere nuove alleanze, smascherare il colpevole e rendere giustizia all’abuso di potere e alla corruzione che da tempo affliggono Gotham City.');
 //invoco la funzione che assegni il nuovo valore al voto
@@ -58,7 +58,7 @@ $superman = new Movie ('https://image.tmdb.org/t/p/w342/ucdkkitvvTKKmfzLuiKFCirn
 $superman -> setVoteRounding(7.1);
 
 
-//pusho le variabili create dentro all'array films
+//pusho gli oggetti creati dentro all'array films
 
 array_push($films, $batman, $spiderman, $superman);
 
