@@ -64,8 +64,6 @@ array_push($films, $batman, $spiderman, $superman);
 
 
 
-
-
 /* $films = [
     $batman,
     $spiderman,
